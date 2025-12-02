@@ -1,1 +1,37 @@
 El análisis completo y el dashboard pueden consultarse aquí: https://docs.google.com/spreadsheets/d/1t9YlgIrbi9tQi1QQ21gdSYFNVZcAyf_MX3kogdUl0ZY/edit?usp=sharing
+
+
+Transformación y limpieza de Datos:
+
+Aunque el dataset descargado de Kaggle presentaba una estructura inicial sólida (sin valores nulos, sin columnas duplicadas y sin errores de tipo), ha sido necesario realizar
+una serie de transformaciones y validaciones para garantizar la calidad del análisis posterior. A continuación se detallan los pasos aplicados y la justificación de cada uno 
+de ellos.
+
+Se verificó que:
+No existían valores nulos en ninguna columna.
+No había columnas duplicadas.
+
+Los tipos de datos eran coherentes con el contenido:
+Year, Mileage_KM, Sales_Volume y Price_USD como valores numéricos. El precio lo vamos a dejar en USD ya que vamos a tomar esta moneda como referencia mundial por delante 
+del Euro. Se ha revisado que no haya valores negativos o valores imposibles (ej. kilometrajes “0” en coches usados).
+Model, Region, Fuel_Type, Transmission, Color y Sales_Classification como texto.
+Aunque la columna Engine_Size_L contiene valores numéricos, se decidió mantenerla en formato texto porque no íbamos a emplearla en cálculos. En su lugar se utiliza 
+únicamente como etiqueta descriptiva del motor. Esto evita conversiones innecesarias y mantiene la consistencia con el uso previsto de la variable.
+
+También se revisaron los outliers: 
+Mileage_KM (vehículos con más de 400.000 km)
+Price_USD (precios superiores a 200.000 USD)
+Engine_Size_L (motores mayores de 7L)
+
+He añadido una columna nueva al final de la table en la que obtenemos el total de ingresos obtenidos, multiplicando las columnas de precio y volumen de ventas. De este modo,
+veremos los ingresos generados en la empresa de forma global y luego mediante filtros, podremos ver que modelo/año/país genero más ingresos. Al no tener información de los
+costes, no podremos ver el beneficio. 
+
+En la columna Year, hemos comprobado que no había valores nulos y además, que el rango de años no se salía de lo mencionado en el enunciado. Todos los valores estaban 
+comprendidos entre 2010 y 2024.
+
+Para realizar calculos, como hemos dejado como formato número las columnas de volumen de ventas y kilometraje, hemos podido añadir una columna de precio por km para analizar 
+el coste para el comprador según cada modelo de coche, haciendo una division del precio del coche por kilometraje realizado. Y otra columna para ver la antiguedad de los vehículos que se llama Car_age. 
+
+Aunque el dataset no presentaba errores estructurales, sí se realizó una limpieza lógica, normalización y creación de variables derivadas que permiten profundizar en el 
+análisis y obtener insights relevantes. Tras las transformaciones, la base de datos quedó preparada para el análisis descriptivo y la construcción del dashboard.
