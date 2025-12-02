@@ -35,3 +35,81 @@ el coste para el comprador según cada modelo de coche, haciendo una division de
 
 Aunque el dataset no presentaba errores estructurales, sí se realizó una limpieza lógica, normalización y creación de variables derivadas que permiten profundizar en el 
 análisis y obtener insights relevantes. Tras las transformaciones, la base de datos quedó preparada para el análisis descriptivo y la construcción del dashboard.
+
+
+Analisis Descriptivo:
+
+A partir de la base de datos transformada, se obtuvieron los siguientes insights:
+
+1. Evolución de ventas por año
+Las ventas muestran una tendencia moderadamente creciente entre 2010 y 2024.
+Los últimos años muestran un aumento, coincidido con mayor demanda de modelos híbridos y eléctricos.
+
+2. Ventas por región
+North America lidera tanto en ventas como en ingresos.
+Europe mantiene un volumen fuerte, especialmente en coches gasolina y diésel.
+Asia-Pacific presenta el mayor crecimiento relativo en los últimos años.
+
+3. Modelos más vendidos
+Los más populares son: Serie 3, Serie 5, X1, X3 y X5.
+El X5 destaca por su alto precio medio → mayor aporte al revenue total.
+Modelos compactos como el Serie 1 tienen más unidades vendidas, pero menor facturación.
+
+4. Análisis de precios
+Factores que afectan al precio:
+Región: NA > Europa > Asia.
+
+Combustible:
+Eléctricos → los más caros
+Diésel → gama media
+Gasolina → gama más baja
+Antigüedad: fuerte depreciación a medida que aumenta Car_Age.
+
+5. Influencia del kilometraje
+Relación inversa clara: más kilómetros → menor precio.
+La métrica Price_per_KM permite detectar modelos sobrevalorados o infravalorados.
+
+6. Fuel Type y tendencias recientes
+Fuerte crecimiento en ventas de vehículos híbridos y eléctricos.
+Los eléctricos presentan menor kilometraje medio, compatible con su reciente introducción en el mercado.
+
+
+Informe explicativo del analisis:
+
+Tras limpiar y preparar el dataset, se realizó un análisis para entender mejor las ventas de BMW entre 2010 y 2024. A continuación resumo los resultados más importantes 
+de manera clara y sencilla.
+
+1. Evolución de las ventas
+Las ventas aumentan de forma progresiva a lo largo de los años. En los últimos años del periodo analizado se ve un crecimiento más fuerte, probablemente relacionado 
+con el aumento de nuevos modelos (sobre todo eléctricos e híbridos).
+
+2. Diferencias entre regiones
+Las tres regiones principales muestran comportamientos distintos:
+North America es la que más ingresos genera, porque allí los modelos más caros tienen mucha demanda.
+Europe mantiene un volumen de ventas constante, con más presencia de coches gasolina y diésel.
+Asia-Pacific es la región que más crece, especialmente en coches eléctricos e híbridos.
+
+3. Modelos más relevantes
+Los modelos que más se repiten en las ventas son:
+Serie 3
+Serie 5
+X1
+X3
+X5
+Entre ellos, el X5 destaca porque, aunque no es el más vendido en número de unidades, sí genera muchos ingresos gracias a su precio elevado.
+
+4. Relación entre precio, kilometraje y antigüedad
+Los datos muestran varios patrones lógicos:
+Cuantos más kilómetros tiene un coche, más baja suele ser su precio.
+Cuanto más antiguo, más se deprecia.
+Los eléctricos suelen tener menos kilometraje porque son los más nuevos del mercado.
+La columna creada de precio por kilómetro confirma estas tendencias y permite ver qué modelos están más ajustados de precio.
+
+5. Tipos de combustible
+Se ve claramente cómo en los últimos años aumentan las ventas de coches híbridos y eléctricos, mientras que los diésel empiezan a disminuir. Esto encaja con las 
+tendencias actuales del sector del automóvil.
+
+6. Ingresos totales
+Gracias a la columna de ingresos totales, se puede ver fácilmente qué modelos y regiones generan más dinero. Aquí destacan:
+North America
+Los modelos de gama alta como X5 y Serie 5
